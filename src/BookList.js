@@ -38,8 +38,7 @@ class BookList extends Component {
 
 const mapStateToProps = state => {
   return {
-    books: state.booksState.books,
-    loading: state.loading
+    books: state.booksState.books
   };
 };
 

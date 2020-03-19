@@ -5,7 +5,7 @@ export const instance = axios.create({
   baseURL: "https://the-index-api.herokuapp.com"
 });
 
-export const setbooks = authors => {
+export const setBooks = books => {
   return {
     type: SET_BOOKS,
     payload: books
@@ -17,7 +17,7 @@ export const fetchAllBooks = () => {
     try {
       const res = await instance.get("/api/books/");
       const books = res.data;
-      return setAuthors(books);
+      return setBooks(books);
     } catch (err) {
       console.log(err);
     }

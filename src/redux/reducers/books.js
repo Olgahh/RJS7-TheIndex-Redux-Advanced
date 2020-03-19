@@ -1,5 +1,3 @@
-import { SET_BOOKS } from "../actions/actionTypes";
-
 const initialState = {
   books: [],
   loading: true
@@ -7,7 +5,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case SET_BOOKS:
+    case "SET_BOOKS":
       return {
         ...state,
         books: action.payload,
