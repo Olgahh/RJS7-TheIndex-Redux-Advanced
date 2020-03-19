@@ -37,7 +37,7 @@ class AuthorsList extends Component {
 
 const mapStateToProps = state => {
   return {
-    authors: state.authors,
+    authors: state.authorsState.authors,
     loading: state.loading
   };
 };
