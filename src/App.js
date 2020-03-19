@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Switch, Route, Redirect } from "react-router-dom";
-import axios from "axios";
 
 // Components
 import Sidebar from "./Sidebar";
@@ -9,45 +8,7 @@ import AuthorsList from "./AuthorsList";
 import AuthorDetail from "./AuthorDetail";
 import BookList from "./BookList";
 
-const instance = axios.create({
-  baseURL: "https://the-index-api.herokuapp.com"
-});
-
 class App extends Component {
-  state = {
-    authors: [],
-    books: [],
-    loading: true
-  };
-
-  fetchAllAuthors = async () => {
-    const res = await instance.get("/api/authors/");
-    return res.data;
-  };
-
-  fetchAllBooks = async () => {
-    const res = await instance.get("/api/books/");
-    return res.data;
-  };
-
-  async componentDidMount() {
-    try {
-      const authorsReq = this.fetchAllAuthors();
-      const booksReq = this.fetchAllBooks();
-
-      const authors = await authorsReq;
-      const books = await booksReq;
-
-      this.setState({
-        authors: authors,
-        books: books,
-        loading: false
-      });
-    } catch (err) {
-      console.error(err);
-    }
-  }
-
   getView = () => {
     if (this.state.loading) {
       return <Loading />;
