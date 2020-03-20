@@ -1,2 +1,2 @@
-export { fetchAllAuthors } from "./authors";
-export { fetchAllBooks } from "./books";
+export { fetchAuthors } from "../authors";
+export { fetchBooks } from "../books";

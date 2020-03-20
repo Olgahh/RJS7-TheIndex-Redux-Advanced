@@ -1,4 +1,4 @@
-import { SET_BOOKS } from "./actionType";
+import { SET_BOOKS } from "../actions/actionTypes";
 import axios from "axios";
 
 export const instance = axios.create({
@@ -12,7 +12,7 @@ export const setBooks = books => {
   };
 };
 
-export const fetchAllBooks = () => {
+export const fetchBooks = () => {
   return async dispatch => {
     try {
       const res = await instance.get("/api/books/");

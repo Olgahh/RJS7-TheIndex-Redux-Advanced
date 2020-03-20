@@ -8,9 +8,9 @@ import AuthorsList from "./AuthorsList";
 import AuthorDetail from "./AuthorDetail";
 import BookList from "./BookList";
 
-const App = props => {
+const App = ({ loading }) => {
   const getView = () => {
-    if (props.loading) {
+    if (loading) {
       return <Loading />;
     } else {
       return (

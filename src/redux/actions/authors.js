@@ -1,4 +1,4 @@
-import { SET_AUTHORS } from "./actionType";
+import { SET_AUTHORS } from "../actions/actionTypes";
 import axios from "axios";
 
 export const instance = axios.create({
@@ -12,7 +12,7 @@ export const setAuthors = authors => {
   };
 };
 
-export const fetchAllAuthors = () => {
+export const fetchAuthors = () => {
   return async dispatch => {
     try {
       const res = await instance.get("/api/authors/");
